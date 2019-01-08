@@ -18,7 +18,7 @@ namespace System.IO
         }
         public static FileInfo Replace_Directory(FileInfo Item, DirectoryInfo NewDirectory)
         {
-            string temp = NewDirectory.FullName + Item.Name;
+            string temp = WithEnding(NewDirectory.FullName,"\\") + Item.Name;
             return new FileInfo(temp);
         }
         public static List<FileInfo> DirSearch(DirectoryInfo Dir)
@@ -40,6 +40,18 @@ namespace System.IO
             FileStream fileStream = item.Create();
             fileStream.Close();
             item.Refresh();
+        }
+
+        public static string WithEnding(string data, string end)
+        {
+            if (data.EndsWith(end)) return data;
+            else return data += end;
+        }
+        public static bool CheckSubPath(DirectoryInfo base_path, DirectoryInfo sub_path)
+        {
+            string basep = WithEnding(base_path.FullName, "\\");
+            string subp = WithEnding(sub_path.FullName, "\\");
+            return subp.IndexOf(basep) == 0;
         }
     }
 }

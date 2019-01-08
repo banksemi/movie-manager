@@ -26,6 +26,8 @@ namespace MovieManager
                         while (Config.MaxThread <= ThreadList.Count) Thread.Sleep(1000);
                         if (Config.ReadFileExtension.Contains(item.Extension.Substring(1)))
                         {
+                            if (FileIO.CheckSubPath(Config.TempDirectory,item.Directory))
+                                continue;
                             FileInfo OutputFile = FileIO.Replace_Extension(item, Config.OutputFileExtension);
                             FileInfo TempFile = FileIO.Replace_Directory(OutputFile, Config.TempDirectory);
                             FileInfo LockFile = FileIO.Replace_Extension(item, "lock");
