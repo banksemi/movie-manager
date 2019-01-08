@@ -8,7 +8,7 @@ namespace MovieManager
 {
     public static class ThreadList
     {
-        private static List<ffmpeg> threads = new List<ffmpeg>();
+        public static List<ffmpeg> threads = new List<ffmpeg>();
         public static int Count => threads.Count;
         public static void Add(ffmpeg ffmpeg, Action action)
         {
@@ -29,24 +29,6 @@ namespace MovieManager
             {
                 threads.Add(ffmpeg);
                 thread.Start();
-            }
-        }
-        public static void ConsoleUpdateThread()
-        {
-            while (true)
-            {
-                lock(threads)
-                {
-                    Console.Clear();
-                    int i = 0;
-                    foreach(ffmpeg ffmpeg in threads)
-                    {
-                        Console.WriteLine("#{0} " +  ffmpeg.file.FullName,i++);
-                        Console.WriteLine("\tState : " + ffmpeg.State);
-                        Console.WriteLine();
-                    }
-                }
-                Thread.Sleep(1000);
             }
         }
     }

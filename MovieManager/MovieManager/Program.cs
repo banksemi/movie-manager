@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ namespace MovieManager
         {
             Config.Setup();
             if (Config.TempDirectory.Exists == false) Config.TempDirectory.Create();
-            new Thread(ThreadList.ConsoleUpdateThread).Start();
+            new Thread(ConsoleSystem.ConsoleUpdateThread).Start();
             // Check New File in Main Thread
             while(true)
             {
@@ -59,12 +59,18 @@ namespace MovieManager
                                 {
                                     try
                                     {
+                                        MessageItem Message = new MessageItem("Found File", item.Name);
+                                        ConsoleSystem.AddMessage(Message);
                                         // Create Lock File
                                         FileIO.CreateFile(LockFile);
-
+                                        Message.Update("Create Lock", LockFile.Name);
+                                        Message.Update("Convert File", item.Name + " -> " + TempFile.Name);
                                         ffmpeg.Convert(videoSetting, audioSetting, TempFile);
+                                        Message.Update("Move File", TempFile.Name + " -> " + OutputFile.Name);
                                         TempFile.MoveTo(OutputFile.FullName);
+                                        Message.Update("Delete File", item.Name);
                                         item.Delete();
+                                        Message.Update("Complete", item.Name);
                                     }
                                     catch (Exception e)
                                     {

@@ -31,6 +31,8 @@ namespace MovieManager
         /// </summary>
         public static int ResearchTime = 600;
 
+        public static int MaxConsoleLine = 10;
+
         public static List<AudioSetting> AudioSettings = new List<AudioSetting>();
         public static List<VideoSetting> VideoSettings = new List<VideoSetting>();
         public static void Setup()
