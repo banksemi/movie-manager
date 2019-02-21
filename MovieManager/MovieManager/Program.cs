@@ -68,12 +68,20 @@ namespace MovieManager
                                         FileIO.CreateFile(LockFile);
                                         Message.Update("Create Lock", LockFile.Name);
                                         Message.Update("Convert File", item.Name + " -> " + TempFile.Name);
-                                        ffmpeg.Convert(videoSetting, audioSetting, TempFile);
-                                        Message.Update("Move File", TempFile.Name + " -> " + OutputFile.Name);
-                                        TempFile.MoveTo(OutputFile.FullName);
-                                        Message.Update("Delete File", item.Name);
-                                        item.Delete();
-                                        Message.Update("Complete", item.Name);
+                                        bool result = ffmpeg.Convert(videoSetting, audioSetting, TempFile);
+                                        if (result == true)
+                                        {
+                                            Message.Update("Move File", TempFile.Name + " -> " + OutputFile.Name);
+                                            TempFile.MoveTo(OutputFile.FullName);
+                                            Message.Update("Delete File", item.Name);
+                                            item.Delete();
+                                            Message.Update("Complete", item.Name);
+                                        }
+                                        else
+                                        {
+
+                                            Message.Update("Error", item.Name);
+                                        }
                                     }
                                     catch (Exception e)
                                     {

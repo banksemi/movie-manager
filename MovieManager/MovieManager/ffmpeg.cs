@@ -48,7 +48,7 @@ namespace MovieManager
                 }
             }
         }
-        public void Convert(VideoSetting videoSetting,AudioSetting audioSetting, FileInfo newPath)
+        public bool Convert(VideoSetting videoSetting,AudioSetting audioSetting, FileInfo newPath)
         {
             string vcodec = "copy";
             string acodec = "copy";
@@ -89,6 +89,7 @@ namespace MovieManager
                     State = line;
                 }
             }
+            return State != null;
         }
     }
 }
