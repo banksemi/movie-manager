@@ -24,6 +24,7 @@ namespace MovieManager
                     {
                         // Wait idle thread bacause of MaxThreadCount.
                         while (Config.MaxThread <= ThreadList.Count) Thread.Sleep(1000);
+                        if (String.IsNullOrEmpty(item.Extension)) continue; // if file don't have extension, skip
                         if (Config.ReadFileExtension.Contains(item.Extension.Substring(1)))
                         {
                             if (FileIO.CheckSubPath(Config.TempDirectory,item.Directory))
