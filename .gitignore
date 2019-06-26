@@ -328,3 +328,6 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# ffmpeg file -> upload to git
+!**/ffmpeg*/[Bb]in/
