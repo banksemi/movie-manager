@@ -29,6 +29,8 @@ namespace MovieManager
     public static class ConsoleSystem
     {
         private static List<MessageItem> Console_Message = new List<MessageItem>();
+
+        private static string console = "";
         public static void ConsoleUpdateThread()
         {
             while (true)
@@ -46,24 +48,30 @@ namespace MovieManager
         }
         public static void ConsoleUpdate()
         {
+            StringBuilder stdout = new StringBuilder();
             lock (ThreadList.threads)
             {
-                Console.Clear();
                 int i = 0;
                 foreach (ffmpeg ffmpeg in ThreadList.threads)
                 {
-                    Console.WriteLine("#{0} " + ffmpeg.file.FullName, i++);
-                    Console.WriteLine("\tState : " + ffmpeg.State);
-                    Console.WriteLine();
+                    stdout.AppendLine(string.Format("#{0} " + ffmpeg.file.FullName, i++));
+                    stdout.AppendLine("\tState : " + ffmpeg.State);
+                    stdout.AppendLine();
                 }
             }
-            Console.WriteLine("-------------------------------------------------------");
-            Console.WriteLine("  Massage");
-            Console.WriteLine("-------------------------------------------------------");
+            stdout.AppendLine("-------------------------------------------------------");
+            stdout.AppendLine("  Message");
+            stdout.AppendLine("-------------------------------------------------------");
 
             foreach (MessageItem Message in Console_Message)
             {
-                Console.WriteLine(Message);
+                stdout.AppendLine(Message.ToString());
+            }
+            if (!console.Equals(stdout.ToString()))
+            {
+                console = stdout.ToString();
+                Console.Clear();
+                Console.Write(console);
             }
         }
     }
