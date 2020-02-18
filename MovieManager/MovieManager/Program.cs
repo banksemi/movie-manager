@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Threading;
+using System.Text.RegularExpressions;
 namespace MovieManager
 {
     class Program
@@ -29,6 +30,13 @@ namespace MovieManager
                         {
                             if (FileIO.CheckSubPath(Config.TempDirectory,item.Directory))
                                 continue;
+
+                            Match resolution = Regex.Match(item.Name, "([0-9]+)[iIpP]");
+                            if (resolution.Success == false)
+                                continue;
+                            if (Int32.Parse(resolution.Groups[1].Value) < Config.EncoderMinResolution) {
+                                continue;
+                            }
                             FileInfo OutputFile = FileIO.Replace_Extension(item, Config.OutputFileExtension);
                             FileInfo TempFile = FileIO.Replace_Directory(OutputFile, Config.TempDirectory);
                             FileInfo LockFile = FileIO.Replace_Extension(item, "lock");

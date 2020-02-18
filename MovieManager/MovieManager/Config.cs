@@ -19,6 +19,7 @@ namespace MovieManager
 
         public static DirectoryInfo TargetDirectory = new DirectoryInfo("video");
 
+        public static int EncoderMinResolution = 1080;
         /// <summary>
         /// Temporary folder that stores the file being encoded.
         /// <para> I recommend 16GB or more. </para>
