@@ -37,12 +37,23 @@ namespace MovieManager
         public static List<VideoSetting> VideoSettings = new List<VideoSetting>();
         public static void Setup()
         {
+            /*
             AudioSettings.Add(new AudioSetting()
             {
                 OriginalCodec = AudioType.ALL,
                 TargetCodec = AudioType.AAC,
                 VolumeBoost = 1.15
             });
+            */
+
+            VideoSettings.Add(new VideoSetting()
+            {
+                OriginalCodec = VideoType.H264,
+                TargetCodec = VideoType.HEVC_NVENC,
+                // -profile:v main -preset medium -b:v 2000k -rc vbr_hq -rc-lookahead 30 -spatial_aq 1 -aq-strength 10 -refs 4
+                option = "-profile:v main -preset slow -b:v 2200k -rc vbr_hq -rc-lookahead 30 -spatial_aq 1 -aq-strength 10 -refs 4"
+            });
+
             TempDirectory = new DirectoryInfo("V:\\Temp\\");
             TargetDirectory = new DirectoryInfo("V:\\");
 

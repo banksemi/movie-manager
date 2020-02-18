@@ -38,7 +38,12 @@ namespace MovieManager
             while ((codec = reader.ReadLine()) != null)
             {
                 string type = reader.ReadLine();
-                if (type == "video") VideoCodec = VideoType.ETC;
+                if (type == "video")
+                {
+                    VideoCodec = VideoType.ETC;
+                    if (codec == "h264") VideoCodec = VideoType.H264;
+                    if (codec == "hevc") VideoCodec = VideoType.HEVC;
+                }
                 if (type == "audio")
                 {
                     AudioCodec = AudioType.ETC;
@@ -72,7 +77,11 @@ namespace MovieManager
                 }
             }
 
-            psiProcInfo.Arguments += " -vcodec " + vcodec + " -acodec " + acodec;
+            // Video codec
+            psiProcInfo.Arguments += " -map 0:v -c:v " + vcodec;
+            psiProcInfo.Arguments += " " + videoSetting.option;
+
+            psiProcInfo.Arguments += " -map 0:a -acodec " + acodec;
             psiProcInfo.Arguments += " \"" + newPath.FullName + "\"";
             psiProcInfo.UseShellExecute = false;
             psiProcInfo.RedirectStandardError = true;

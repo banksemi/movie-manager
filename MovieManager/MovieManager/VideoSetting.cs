@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +8,12 @@ namespace MovieManager
 {
     public enum VideoType
     {
-        ALL, ETC
+        ALL, H264, HEVC, ETC, HEVC_NVENC
     }
     public class VideoSetting
     {
         public VideoType OriginalCodec;
         public VideoType TargetCodec;
+        public string option;
     }
 }
