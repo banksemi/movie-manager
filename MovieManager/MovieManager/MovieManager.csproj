@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -55,65 +55,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ffmpeg-20170214-8fa18e0-win64-static\presets\ffprobe.xsd">
+    <None Include="ffmpeg-20200216-8578433-win64-static\presets\ffprobe.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ffmpeg-20170214-8fa18e0-win64-static\presets\libvpx-1080p.ffpreset" />
-    <None Include="ffmpeg-20170214-8fa18e0-win64-static\presets\libvpx-1080p50_60.ffpreset" />
-    <None Include="ffmpeg-20170214-8fa18e0-win64-static\presets\libvpx-360p.ffpreset" />
-    <None Include="ffmpeg-20170214-8fa18e0-win64-static\presets\libvpx-720p.ffpreset" />
-    <None Include="ffmpeg-20170214-8fa18e0-win64-static\presets\libvpx-720p50_60.ffpreset" />
+    <None Include="ffmpeg-20200216-8578433-win64-static\presets\libvpx-1080p.ffpreset" />
+    <None Include="ffmpeg-20200216-8578433-win64-static\presets\libvpx-1080p50_60.ffpreset" />
+    <None Include="ffmpeg-20200216-8578433-win64-static\presets\libvpx-360p.ffpreset" />
+    <None Include="ffmpeg-20200216-8578433-win64-static\presets\libvpx-720p.ffpreset" />
+    <None Include="ffmpeg-20200216-8578433-win64-static\presets\libvpx-720p50_60.ffpreset" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ffmpeg-20170214-8fa18e0-win64-static\bin\ffmpeg.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ffmpeg-20170214-8fa18e0-win64-static\bin\ffplay.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ffmpeg-20170214-8fa18e0-win64-static\bin\ffprobe.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\bzip2.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\fontconfig.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\freetype.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\frei0r.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\gme.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\gnutls.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\lame.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libass.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libbluray.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libbs2b.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libcaca.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libgsm.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libiconv.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libilbc.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libmfx.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libmodplug.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libtheora.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libvorbis.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libvpx.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\libwebp.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\opencore-amr.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\openh264.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\openjpeg.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\opus.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\rtmpdump.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\snappy.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\soxr.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\speex.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\twolame.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\vid.stab.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\vo-amrwbenc.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\wavpack.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\x264.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\x265.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\xavs.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\xvid.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\xz.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\zimg.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\licenses\zlib.txt" />
-    <Content Include="ffmpeg-20170214-8fa18e0-win64-static\README.txt" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\bin\ffmpeg.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ffmpeg-20200216-8578433-win64-static\bin\ffplay.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ffmpeg-20200216-8578433-win64-static\bin\ffprobe.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\bootstrap.min.css" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\default.css" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\developer.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\faq.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\fate.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg-all.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg-bitstream-filters.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg-codecs.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg-devices.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg-filters.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg-formats.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg-protocols.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg-resampler.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg-scaler.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg-utils.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffmpeg.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffplay-all.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffplay.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffprobe-all.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\ffprobe.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\general.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\git-howto.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\libavcodec.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\libavdevice.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\libavfilter.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\libavformat.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\libavutil.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\libswresample.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\libswscale.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\mailing-list-faq.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\nut.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\platform.html" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\doc\style.min.css" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\LICENSE.txt" />
+    <Content Include="ffmpeg-20200216-8578433-win64-static\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

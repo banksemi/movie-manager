@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +15,7 @@ namespace MovieManager
 
         public static string[] ReadFileExtension = { "mkv" };
         public static string OutputFileExtension = "mp4";
-        public static DirectoryInfo FFMPEGPath = new DirectoryInfo("ffmpeg-20170214-8fa18e0-win64-static\\bin\\");
+        public static DirectoryInfo FFMPEGPath = new DirectoryInfo("ffmpeg-20200216-8578433-win64-static\\bin\\");
 
         public static DirectoryInfo TargetDirectory = new DirectoryInfo("video");
 
